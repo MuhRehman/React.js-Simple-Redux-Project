@@ -1,7 +1,10 @@
-import React from 'react'
+import {React, useState} from 'react'
 import './Todo.css'
 
 export default function Todo() {
+
+ const [inputData, setInputData] = useState('');  
+
     return (
         <div>
                <div className=" d-flex justify-content-center mt-5 ">
@@ -13,7 +16,14 @@ export default function Todo() {
                 <div className="card px-3">
                     <div className="card-body">
                         <h4 className="card-title"> Todo list</h4>
-                        <div className="add-items d-flex"> <input type="text" className="form-control todo-list-input" placeholder="What do you need to do today?"/> <button className="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> </div>
+                        <div className="add-items d-flex"> 
+                        <input value={inputData}  onChange={(event)=> setInputData(event.target.value)}
+                         type="text" className="form-control todo-list-input" placeholder="What do you need to do today?"/>
+                        
+                         <button onClick="" className="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button>
+                         
+                          </div>
+                        
                         <div className="list-wrapper mt-4">
                             <ul className="d-flex flex-column-reverse todo-list">
                                 <li>
